@@ -1,0 +1,14 @@
+Flask>=3.0,<4
+flask-cors>=4.0,<6
+Pillow>=10.0,<13
+numpy>=1.26,<3
+# torch/torchvision power the trained ResNet18 classifier; the app runs
+# fine without them (falls back to the heuristic CV classifier) but you
+# won't get model-based predictions or be able to train new checkpoints.
+torch>=2.2,<3
+torchvision>=0.17,<1
+datasets>=3.0,<5
+scikit-learn>=1.4,<2
+# opencv powers video analysis: frame sampling, pothole/crack heuristic
+# detection, and automatic speed estimation (no manual entry needed).
+opencv-python-headless>=4.9,<5
