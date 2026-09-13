@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROADDOC — Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-v2.css">
+</head>
+<body class="v2">
+<div id="boot">
+  <div class="bl">ROAD<span>DOC</span></div>
+  <div class="bsub">VISION SYSTEM · INITIALIZING</div>
+  <div class="btrack"><i id="bootFill"></i></div>
+  <div class="blog" id="bootLog">booting sensor array…</div>
+</div>
+
+<header class="v2-header">
+  <div class="v2-logo">
+    <div class="v2-logo-mark">🔺</div>
+    <div><b>ROADDOC</b><span>AI ROAD &amp; TYRE SAFETY</span></div>
+  </div>
+  <nav class="v2-nav">
+    <a href="index.html" class="active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg> Dashboard</a>
+    <a href="track-analysis.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4 8-10"/><path d="M14 5h6v6"/></svg> Road</a>
+    <a href="car-status.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><rect x="3" y="11" width="18" height="6" rx="1.5"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg> Vehicle</a>
+    <a href="live-analysis.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="M15 10l6-3v10l-6-3"/></svg> Live AI</a>
+    <a href="telemetry.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Alerts<span class="v2-nav-badge">3</span></a>
+    <a href="system.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Settings</a>
+  </nav>
+  <div class="v2-status">
+    <div class="v2-status-dots">
+      <span class="v2-online-tag" id="linkPillTop"><i></i><span id="linkTextTop">AI Engine Online</span></span>
+      <span class="v2-online-tag"><i></i>GPS Connected</span>
+      <span class="v2-online-tag"><i></i>TPMS Connected</span>
+    </div>
+    <span class="v2-weather">⛅ 28°C</span>
+    <span class="v2-clock-block"><span><span class="cl-time" id="clock">--:--:--</span><span class="cl-date" id="clockDate">--</span></span></span>
+  </div>
+</header>
+
+<div class="v2-shell">
+  <aside class="v2-sidebar">
+    <a href="index.html" class="active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg> Dashboard</a>
+    <a href="track-analysis.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4 8-10"/><path d="M14 5h6v6"/></svg> Road</a>
+    <a href="car-status.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><rect x="3" y="11" width="18" height="6" rx="1.5"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg> Vehicle</a>
+    <a href="live-analysis.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="M15 10l6-3v10l-6-3"/></svg> Live AI</a>
+    <a href="telemetry.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Alerts<span class="v2-nav-badge">3</span></a>
+    <a href="system.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Settings</a>
+    <div class="spacer"></div>
+    <div class="v2-tagline">Safer Roads.<br>Smarter Journeys.</div>
+    <div class="v2-tagline-rule"></div>
+  </aside>
+
+  <main class="v2-main">
+
+    <!-- ============================= ROAD CONDITION ============================= -->
+    <div class="v2-area-road" style="display:flex;flex-direction:column;gap:16px">
+    <section class="v2-card">
+      <div class="v2-card-head"><h2>📡 Road Condition</h2><span class="v2-tag"><i></i>Real-time Analysis</span></div>
+
+      <div class="v2-gauge-row">
+        <div class="v2-gauge">
+          <svg viewBox="0 0 130 130">
+            <circle cx="65" cy="65" r="54" class="track-bg" pathLength="100" stroke="#ef4444" stroke-dasharray="49 51" stroke-dashoffset="0"/>
+            <circle cx="65" cy="65" r="54" class="track-bg" pathLength="100" stroke="#f59e0b" stroke-dasharray="29 71" stroke-dashoffset="-49"/>
+            <circle cx="65" cy="65" r="54" class="track-bg" pathLength="100" stroke="#22c55e" stroke-dasharray="22 78" stroke-dashoffset="-78"/>
+            <circle cx="65" cy="65" r="54" class="track-fill" id="gaugeArc" pathLength="100" stroke-dasharray="0 100"/>
+          </svg>
+          <div class="v2-gauge-center">🛣️</div>
+        </div>
+        <div class="v2-gauge-info">
+          <div class="lbl">Condition</div>
+          <div class="val" id="gaugeBand" style="color:var(--v2-dim)">STANDBY</div>
+          <div class="score">Score <b id="gaugeScore">—</b>/100</div>
+          <p id="gaugeDesc">Awaiting first frame — run a scan to analyze the surface.</p>
+        </div>
+      </div>
+
+      <div class="v2-legend">
+        <div class="lg" id="legendGood" style="color:#22c55e"><span class="dot"></span><span class="name">Good</span><span class="range">80-100</span></div>
+        <div class="lg" id="legendRegular" style="color:#f59e0b"><span class="dot"></span><span class="name">Regular</span><span class="range">50-79</span></div>
+        <div class="lg" id="legendPoor" style="color:#ef4444"><span class="dot"></span><span class="name">Poor</span><span class="range">0-49</span></div>
+      </div>
+    </section>
+
+    <section class="v2-card">
+      <div class="v2-card-head"><h2>📶 Model Probabilities</h2><span class="v2-tag" id="probEngineTag" style="color:var(--v2-dim)"><span id="probEngine"></span></span></div>
+      <div class="v2-prob-row"><span class="dot" style="background:#3b82f6"></span><span class="name">Dry</span><span class="track"><span class="fill" id="probDry" style="background:#3b82f6"></span></span><span class="val" id="probDryV">—</span></div>
+      <div class="v2-prob-row"><span class="dot" style="background:#22d3ee"></span><span class="name">Damp</span><span class="track"><span class="fill" id="probDamp" style="background:#22d3ee"></span></span><span class="val" id="probDampV">—</span></div>
+      <div class="v2-prob-row"><span class="dot" style="background:#c084fc"></span><span class="name">Drying</span><span class="track"><span class="fill" id="probDrying" style="background:#c084fc"></span></span><span class="val" id="probDryingV">—</span></div>
+      <div class="v2-prob-row"><span class="dot" style="background:#f43f5e"></span><span class="name">Wet</span><span class="track"><span class="fill" id="probWet" style="background:#f43f5e"></span></span><span class="val" id="probWetV">—</span></div>
+    </section>
+
+    <section class="v2-card">
+      <div class="v2-card-head"><h2>🧠 AI Telemetry Input</h2></div>
+
+      <div class="v2-sensor-grid">
+        <div class="v2-sensor-badge on"><span class="ic">📷</span><span class="lbl">Camera</span><span class="status">ON</span></div>
+        <div class="v2-sensor-badge on"><span class="ic">📶</span><span class="lbl">IMU</span><span class="status">ON</span></div>
+        <div class="v2-sensor-badge on"><span class="ic">📍</span><span class="lbl">GPS</span><span class="status">ON</span></div>
+        <div class="v2-sensor-badge on"><span class="ic">⛅</span><span class="lbl">Weather</span><span class="status">Online</span></div>
+      </div>
+
+      <label class="v2-upload" id="dropzone">
+        <input type="file" id="fileInput" accept="image/*">
+        <div class="up-content">
+          <div class="ic">☁️</div>
+          <div class="t1">Upload Road Frame</div>
+          <div class="t2">Drag &amp; drop or click to browse</div>
+        </div>
+        <div class="dz-loaded">
+          <img id="dzThumb" alt="">
+          <div class="meta"><b>Frame loaded</b>click to replace or re-scan</div>
+          <button type="button" class="v2-btn-outline" style="flex:none;padding:6px 10px" id="rescanBtn">Re-scan</button>
+        </div>
+      </label>
+
+      <div class="v2-simulate-row">
+        <span class="lbl">Simulate:</span>
+        <button class="tf-btn v2-pill-btn dry" data-kind="dry">☀️ Dry</button>
+        <button class="tf-btn v2-pill-btn damp" data-kind="damp">💧 Damp</button>
+        <button class="tf-btn v2-pill-btn drying" data-kind="drying">🌫️ Drying</button>
+        <button class="tf-btn v2-pill-btn wet" data-kind="wet">🌊 Wet</button>
+      </div>
+
+      <button class="v2-btn-primary" id="analyzeBtn" disabled>Analyze Frame →</button>
+      <div class="v2-btn-row">
+        <button class="v2-btn-outline" id="demoBtn">▶ Run Lap Sequence</button>
+        <button class="v2-btn-outline" id="resetBtn">↻ Reset</button>
+      </div>
+      <div class="v2-status-line" id="statusLine"><i></i><span>System Ready</span></div>
+    </section>
+    </div>
+
+    <!-- ============================= SENSOR FEED ============================= -->
+    <section class="v2-card v2-area-feed">
+      <div class="v2-card-head"><h2>📷 Live Road Camera</h2><span class="v2-tag"><i></i>Live</span></div>
+
+      <label class="v2-feed-visual" id="scanFrame">
+        <input type="file" id="fileInput2" accept="image/*">
+        <div class="mountains"></div>
+        <div class="road"></div>
+        <div class="road-line"></div>
+        <div class="v2-grid-overlay" id="gridOverlay" style="display:none"></div>
+        <div class="v2-heat-patch" id="heatPatch" style="display:none"></div>
+        <img id="scanImg" alt="Frame preview" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35">
+
+        <div class="v2-feed-empty" id="feedEmptyHint">
+          <div class="ic">◎</div>
+          <div>Drop a road frame here<br><span style="font-size:.65rem">or use a test feed on the left</span></div>
+        </div>
+
+        <div class="v2-feed-topleft" id="feedTopLeft" style="display:none">
+          <div class="thumb"></div>
+          <div class="cap">Surface Detection</div>
+        </div>
+
+        <div class="v2-feed-detected" id="feedDetected" style="display:none">
+          <div class="hd"><i></i>Detected</div>
+          <div class="row"><span>Road Surface</span><b id="detSurface">—</b></div>
+          <div class="row"><span>Potholes</span><b id="detPotholes">0</b></div>
+          <div class="row"><span>Cracks</span><b id="detCracks">0</b></div>
+          <div class="row"><span>Water</span><b id="detWater">—</b></div>
+        </div>
+
+        <div class="v2-feed-scanbadge" id="feedScanBadge" style="display:none">
+          <div class="ring">🚗</div>
+          <div>
+            <div class="lbl">Scanning…</div>
+            <div class="bar"><i id="scanBarFill" style="width:0%"></i></div>
+          </div>
+          <div class="lbl" id="scanPctLabel">0%</div>
+        </div>
+
+        <svg class="v2-feed-mini-trend" id="miniTrendSvg" viewBox="0 0 110 56" style="display:none"></svg>
+      </label>
+    </section>
+
+    <!-- ============================= AI SAFETY RECOMMENDATION ============================= -->
+    <section class="v2-card v2-area-risk v2-risk-card risk-low" id="riskCard">
+      <div class="v2-risk-head">⚠️ AI Safety Recommendation</div>
+      <div class="v2-risk-level"><span class="ic" id="riskLevelIc">✅</span><span class="txt" id="riskLevelTxt">STANDBY</span></div>
+      <div class="v2-risk-sub" id="riskSubTxt">Awaiting first frame · Speed — km/h</div>
+      <button class="v2-risk-action" id="riskActionBtn">Run a scan to get a recommendation</button>
+      <div class="v2-risk-checklist">
+        <div class="item"><span class="ic">✔️</span><span id="riskCheck1">Check tyre pressure</span></div>
+        <div class="item"><span class="ic">📏</span><span id="riskCheck2">Maintain safe following distance</span></div>
+      </div>
+    </section>
+
+    <!-- ============================= 4-UP STAT ROW ============================= -->
+    <div class="v2-area-stats">
+      <div class="v2-card v2-stat-card">
+        <span class="ic-circle">⏱️</span>
+        <div class="body">
+          <span class="lbl">Speed</span>
+          <span class="val"><span id="speedReadout">—</span> km/h</span>
+          <span class="sub good" id="speedSub"><i></i>Normal</span>
+        </div>
+      </div>
+      <div class="v2-card v2-stat-card">
+        <span class="ic-circle" style="background:rgba(34,211,238,.13);color:var(--v2-cyan)">🛞</span>
+        <div class="body">
+          <span class="lbl">Tyre Pressure</span>
+          <span class="val" id="statTyrePressure">F — · R —</span>
+          <span class="sub good" id="tyrePressureSub"><i></i>Normal</span>
+        </div>
+      </div>
+      <div class="v2-card v2-stat-card">
+        <span class="ic-circle" style="background:rgba(34,197,94,.13);color:var(--v2-green)">💚</span>
+        <div class="body">
+          <span class="lbl">Tyre Health</span>
+          <span class="val" id="statTyreHealth">—%</span>
+          <span class="sub good" id="tyreHealthSub"><i></i>Good</span>
+        </div>
+      </div>
+      <div class="v2-card v2-stat-card">
+        <span class="ic-circle" style="background:rgba(192,132,252,.13);color:#c084fc">🚘</span>
+        <div class="body">
+          <span class="lbl">Vehicle Status</span>
+          <span class="val" id="vsType">Car</span>
+          <span class="sub good"><i></i><span id="vsDriving">Normal</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================= TYRE STRATEGY ============================= -->
+    <section class="v2-card v2-area-tyre">
+      <div class="v2-tyre-bar">
+        <div class="v2-tyre-icon">🛞</div>
+        <div class="v2-tyre-text">
+          <div class="hd">TYRE STRATEGY</div>
+          <div class="sub" id="tyreActionLabel">Recommended Action</div>
+          <p id="suggestionText">Upload or run a test feed to get a recommendation.</p>
+        </div>
+        <div class="v2-tyre-psi">
+          <span class="lbl">Recommended<br>Pressure</span>
+          <div class="v2-tyre-badges">
+            <div class="b"><div class="t">Front Left</div><div class="v" id="psiFL">— PSI</div></div>
+            <div class="b"><div class="t">Front Right</div><div class="v" id="psiFR">— PSI</div></div>
+            <div class="b"><div class="t">Rear Left</div><div class="v" id="psiRL">— PSI</div></div>
+            <div class="b"><div class="t">Rear Right</div><div class="v" id="psiRR">— PSI</div></div>
+          </div>
+        </div>
+      </div>
+      <div id="waterBanner"></div>
+    </section>
+
+    <!-- ============================= HISTORY / TREND / SCORE ROW ============================= -->
+    <section class="v2-card v2-area-history">
+      <div class="v2-card-head"><h2>🕓 Road Condition History</h2></div>
+      <div class="v2-stepper" id="historyStepper">
+        <div class="step"><span class="pt"></span><span class="lbl">—</span></div>
+      </div>
+    </section>
+
+    <section class="v2-card v2-area-trend">
+      <div class="v2-card-head"><h2>📈 Road Condition Trend</h2></div>
+      <canvas id="trendCanvas" height="130"></canvas>
+    </section>
+
+    <section class="v2-card v2-area-score v2-score-card">
+      <div class="car-ic">🚙</div>
+      <div style="font-size:.78rem;color:var(--v2-dim);margin-bottom:8px">Overall Safety Score</div>
+      <div class="v2-score-donut">
+        <svg viewBox="0 0 130 130">
+          <circle cx="65" cy="65" r="54" class="track" pathLength="100"/>
+          <circle cx="65" cy="65" r="54" class="fill" id="safetyScoreArc" pathLength="100" stroke-dasharray="0 100"/>
+        </svg>
+        <div class="center"><span class="num" id="safetyScoreNum">—</span><span class="den">/100</span></div>
+      </div>
+      <div class="v2-score-risklabel" id="safetyScoreRiskLabel">Awaiting data</div>
+    </section>
+
+    <!-- ============================= QUICK INSIGHTS / RECENT ANALYSIS ============================= -->
+    <section class="v2-card v2-area-insights">
+      <div class="v2-card-head"><h2>💡 Quick Insights</h2></div>
+      <div class="v2-insight-grid">
+        <div class="v2-insight"><span class="ic good" id="insightPressureIc">✅</span><div><span class="lbl">Tire Pressure</span><span class="val" id="insightPressure">Normal</span></div></div>
+        <div class="v2-insight"><span class="ic good" id="insightRiskIc">✅</span><div><span class="lbl">Road Risk</span><span class="val" id="insightRisk">Low</span></div></div>
+        <div class="v2-insight"><span class="ic good" id="insightSafetyIc">🛡️</span><div><span class="lbl">Your Safety</span><span class="val" id="insightSafety">Good</span></div></div>
+        <div class="v2-insight"><span class="ic warn" id="insightAlertIc">⚠️</span><div><span class="lbl">Next Alert</span><span class="val" id="insightAlert">None expected</span></div></div>
+      </div>
+    </section>
+
+    <section class="v2-card v2-area-recent">
+      <div class="v2-card-head"><h2>🕓 Recent Analysis</h2></div>
+      <div class="v2-log" id="recentAnalysis">
+        <div class="v2-log-row"><span class="dot" style="background:#5b6480"></span><span class="txt" style="color:var(--v2-dim)">No analysis yet</span></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="v2-footer-bar">
+  <span>REAL-TIME INSIGHTS</span><span class="arrow">→</span><span>SAFER DRIVES</span><span class="arrow">→</span><span>LONGER TYRE LIFE</span>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

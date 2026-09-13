@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROADDOC — Car Status</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-v2.css">
+</head>
+<body class="v2">
+<div id="boot">
+  <div class="bl">ROAD<span>DOC</span></div>
+  <div class="bsub">VISION SYSTEM · INITIALIZING</div>
+  <div class="btrack"><i id="bootFill"></i></div>
+  <div class="blog" id="bootLog">booting sensor array…</div>
+</div>
+
+<header class="v2-header">
+  <div class="v2-logo">
+    <div class="v2-logo-mark">🔺</div>
+    <div><b>ROADDOC</b><span>AI ROAD &amp; TYRE SAFETY</span></div>
+  </div>
+  <nav class="v2-nav">
+    <a href="index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg> Dashboard</a>
+    <a href="track-analysis.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4 8-10"/><path d="M14 5h6v6"/></svg> Road</a>
+    <a href="car-status.html" class="active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><rect x="3" y="11" width="18" height="6" rx="1.5"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg> Vehicle</a>
+    <a href="live-analysis.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="M15 10l6-3v10l-6-3"/></svg> Live AI</a>
+    <a href="telemetry.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Alerts<span class="v2-nav-badge">3</span></a>
+    <a href="system.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Settings</a>
+  </nav>
+  <div class="v2-status">
+    <div class="v2-status-dots">
+      <span class="v2-online-tag" id="linkPillTop"><i></i><span id="linkTextTop">AI Engine Online</span></span>
+      <span class="v2-online-tag"><i></i>GPS Connected</span>
+      <span class="v2-online-tag"><i></i>TPMS Connected</span>
+    </div>
+    <span class="v2-weather">⛅ 28°C</span>
+    <span class="v2-clock-block"><span><span class="cl-time" id="clock">--:--:--</span><span class="cl-date" id="clockDate">--</span></span></span>
+  </div>
+</header>
+
+<div class="v2-shell">
+  <aside class="v2-sidebar">
+    <a href="index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg> Dashboard</a>
+    <a href="track-analysis.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4 8-10"/><path d="M14 5h6v6"/></svg> Road</a>
+    <a href="car-status.html" class="active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><rect x="3" y="11" width="18" height="6" rx="1.5"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg> Vehicle</a>
+    <a href="live-analysis.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="M15 10l6-3v10l-6-3"/></svg> Live AI</a>
+    <a href="telemetry.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Alerts<span class="v2-nav-badge">3</span></a>
+    <a href="system.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Settings</a>
+    <div class="spacer"></div>
+    <div class="v2-tagline">Safer Roads.<br>Smarter Journeys.</div>
+    <div class="v2-tagline-rule"></div>
+  </aside>
+  <div class="subpage v2-subpage">
+  <div class="subpage-head">
+    <div>
+      <h1>Car status</h1>
+      <p>Values entered here are saved automatically and used the next time a frame is analyzed from Dashboard.</p>
+    </div>
+  </div>
+
+  <section class="v2-card">
+    <div class="v2-card-head"><h2><i></i>Vehicle overview</h2><span>live</span></div>
+    <div class="car-status-grid">
+      <div class="car-visual">
+        <div class="car-icon">🚗</div>
+        <div class="car-badge-row">
+          <div class="car-badge"><span class="cb-label">Speed</span><span class="cb-value" id="cbSpeed">—</span></div>
+          <div class="car-badge"><span class="cb-label">Tyre PSI</span><span class="cb-value" id="cbPressure">—</span></div>
+          <div class="car-badge"><span class="cb-label">Condition</span><span class="cb-value" id="cbCondition">—</span></div>
+        </div>
+      </div>
+      <div style="flex:1">
+        <div class="kv"><span class="k">Vehicle type</span><span class="v" id="vsType">Car</span></div>
+        <div class="kv"><span class="k">Driving condition</span><span class="v" id="vsDriving">Normal</span></div>
+        <div class="kv"><span class="k">Speed</span><span class="v" id="vsSpeed">not reported</span></div>
+        <div class="kv"><span class="k">Location</span><span class="v" id="vsLocation">not reported</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="v2-card">
+    <div class="v2-card-head"><h2><i></i>Vehicle &amp; tyre telemetry</h2><span>optional</span></div>
+    <div class="field-grid">
+      <div class="field"><label for="vehicleType">Vehicle type</label>
+        <select id="vehicleType"><option value="car">Car</option><option value="suv">SUV</option><option value="bike">Bike</option><option value="bus">Bus</option><option value="truck">Truck</option></select>
+      </div>
+      <div class="field"><label for="drivingCondition">Driving condition</label>
+        <select id="drivingCondition"><option value="normal">Normal</option><option value="city">City</option><option value="highway">Highway</option><option value="aggressive">Aggressive</option><option value="off-road">Off-road</option></select>
+      </div>
+      <div class="field"><label for="speed">Current speed (km/h)</label><input type="number" id="speed" placeholder="e.g. 80" min="0"></div>
+      <div class="field"><label for="tyreCondition">Tyre condition</label>
+        <select id="tyreCondition"><option value="">Not reported</option><option value="new">New</option><option value="good">Good</option><option value="worn">Worn</option><option value="bald">Bald</option><option value="damaged">Damaged</option></select>
+      </div>
+      <div class="field"><label for="tyrePressure">Tyre pressure (PSI)</label><input type="number" id="tyrePressure" placeholder="e.g. 30" min="0" step="0.5"></div>
+      <div class="field"><label for="tyreRecommendedPressure">Recommended (PSI)</label><input type="number" id="tyreRecommendedPressure" placeholder="e.g. 32" min="0" step="0.5"></div>
+      <div class="field"><label for="tyreTemperature">Tyre temp (°C)</label><input type="number" id="tyreTemperature" placeholder="e.g. 45" min="0"></div>
+      <div class="field span2"><label for="location">Location</label>
+        <div class="locrow"><input type="text" id="location" placeholder="e.g. NH48, Pune bypass"><button type="button" class="rd-btn" style="flex:none;padding:7px 12px;font-size:.62rem" id="gpsBtn">📍 GPS</button></div>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+
+<footer>ROADDOC — AI-based road condition &amp; intelligent tyre safety system. Grip gauge and moisture-bar zone boundaries mirror the live classifier thresholds (wetness &lt; 0.22 dry · ≥ 0.60 wet · ≥ 0.88 standing-water risk). Backend model preferred; falls back to on-device CV when offline.</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
