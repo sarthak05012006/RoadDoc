@@ -1,8 +1,0 @@
-Flask>=3.0,<4
-flask-cors>=4.0,<6
-Pillow>=10.0,<13
-numpy>=1.26,<3
-torch>=2.2,<3
-torchvision>=0.17,<1
-datasets>=3.0,<5
-scikit-learn>=1.4,<2

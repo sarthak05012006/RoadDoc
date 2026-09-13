@@ -1,6 +1,0 @@
-datasets>=3.0,<5
-Pillow>=10.0,<13
-numpy>=1.26,<3
-torch>=2.2,<3
-torchvision>=0.17,<1
-scikit-learn>=1.4,<2
