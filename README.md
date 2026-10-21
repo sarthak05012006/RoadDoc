@@ -1,7 +1,7 @@
 # RoadDoc
 ROADDOC is an AI-based road and tyre safety system that uses a vehicle-mounted camera and sensors to continuously monitor road and weather conditions such as dry, damp, wet, and standing water. 
 The system combines this information with vehicle parameters such as speed and tyre data such as pressure and condition, and processes them through an AI-based safety engine to identify changing road risks. It then provides real-time, vehicle-specific alerts and recommendations, such as reducing speed, checking tyre pressure, or inspecting the tyres, helping drivers respond quickly to changing road conditions and improve overall driving safety.
-# 🌦️ Weather Whiplash — now extended into ROADDOC
+# 🌦️ Weather Whiplash — now extended into ROADDOC      
 
 **Build with भारत 2.0 — National Level Hackathon — Team TechBirds**
 **Problem statement: ROADDOC — AI-Based Road Condition and Intelligent Tyre Safety System**
